@@ -1,0 +1,4 @@
+model,RMSE,MAE
+Prophet,5.5758,4.077
+TensorFlow LSTM,5.7251,4.3203
+PyTorch LSTM,5.7445,4.2914

@@ -1,0 +1,83 @@
+{
+  "theme": "dark",
+  "archetype": "Archetype 4 (Swiss & High-Contrast)",
+  "design_philosophy": "Information clarity, functional beauty, and objective data presentation. The dashboard serves as a 'Command Center' for monitoring real-time public transport delays. We prioritize data density, high-contrast typography, and strict functional colors over decorative elements.",
+  "colors": {
+    "background": "#0A0A0A",
+    "surface": "#141414",
+    "surface_hover": "#1E1E1E",
+    "border": "#2A2A2A",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#A1A1AA",
+    "accents": {
+      "primary": "#007AFF",
+      "success": "#34C759",
+      "warning": "#FFCC00",
+      "danger": "#FF3B30",
+      "info": "#32ADE6"
+    }
+  },
+  "typography": {
+    "heading_font": "Outfit, sans-serif",
+    "body_font": "IBM Plex Sans, sans-serif",
+    "mono_font": "JetBrains Mono, monospace",
+    "rules": [
+      "No Inter, Roboto, Open Sans, or Lato for headings.",
+      "Data metrics and numbers MUST use mono_font for vertical alignment.",
+      "Headings must use tight letter spacing (tracking-tight).",
+      "Labels must be uppercase, tiny, and wide spacing (tracking-[0.2em])."
+    ]
+  },
+  "spacing_and_layout": {
+    "grid_system": "The 'Control Room' Grid",
+    "base_gap": "gap-4 md:gap-6",
+    "container_padding": "p-4 md:p-6",
+    "rules": [
+      "Every pixel utilized. Use h-full on children to ensure they stretch to match neighbors.",
+      "Containers with borders must have internal padding (p-6) to prevent text collision.",
+      "Use flex-col to align internal card contents.",
+      "No jagged bottoms in grid rows."
+    ]
+  },
+  "components": {
+    "cards": "Cardless or Flat Rectangular. Max 4px border-radius (rounded-sm). 1px solid border (border-border). No default shadows.",
+    "buttons": "Sharp edges. High contrast hover states (e.g., hover:bg-white hover:text-black for primary buttons).",
+    "charts": "Recharts. Remove default cartesian grid backgrounds. Use solid, high-contrast lines. Tooltips must use 'Crystal Glass' style (backdrop-blur-xl bg-black/80 border border-white/10).",
+    "tables": "Dense rows. Sticky header with Glassmorphism if scrolling. 1px bottom border per row. Mono font for data cells.",
+    "status_indicators": "Glowing dot (framer-motion pulsing) + Text label. Green for 'Live/Healthy', Red for 'Pipeline Down'."
+  },
+  "surfaces": {
+    "headers": "Crystal Glass variant: bg-black/60 with backdrop-blur-xl and border-b border-white/10.",
+    "widgets": "Grid Borders style: border-collapse layout, subtle borders between metrics."
+  },
+  "motion": {
+    "hover": "Slight lift (-translate-y-[1px]) and border color brighten.",
+    "charts": "Animate on mount. Smooth transitions on data update.",
+    "live_data": "Subtle flash or highlight when a real-time prediction updates."
+  },
+  "media": {
+    "image_urls": [
+      {
+        "url": "https://images.unsplash.com/photo-1596796679119-7cf1a9e5448b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwyfHxCYW5nYWxvcmUlMjBjaXR5JTIwc2t5bGluZXxlbnwwfHx8fDE3NzYzNzEwODR8MA&ixlib=rb-4.1.0&q=85",
+        "category": "header_background_optional",
+        "description": "Subtle train/skyline image. Use only as a highly desaturated, low-opacity (10%) background texture in the top header or empty states, NOT as a hero banner."
+      }
+    ],
+    "icons": "Use 'lucide-react'. Stroke width 1.5. Sizes: 16px for labels, 24px for primary actions, 32px+ for empty states."
+  },
+  "accessibility_and_testing": {
+    "contrast": "Ensure text meets APCA standards. Use Text Shadow over gradients/images.",
+    "data_testid": "All interactive and key informational elements MUST include a data-testid attribute (kebab-case, role-based)."
+  },
+  "instructions_to_main_agent": [
+    "Build the dashboard in Dark Mode strictly following the Swiss & High-Contrast archetype.",
+    "Do NOT use standard Shadcn Cards with soft rounded corners and shadows. Override Shadcn Card to be rounded-none or rounded-sm, bg-transparent or bg-[#141414], with a 1px border-[#2A2A2A].",
+    "Top row should contain Stats Cards (Models count, Active Routes, Data Points, Accuracy) and the Pipeline Status Indicator.",
+    "Middle section must include the Route Selector (Bus/Train, City) and a prominent 'Real-Time Delay Prediction' display using a large Mono font.",
+    "Bottom section should house the Historical Trends Chart (Area Chart) and Model Performance Comparison (RMSE/MAE Bar Charts).",
+    "Include a Route Statistics Table.",
+    "Implement 'data-testid' on all interactive elements (e.g., data-testid='route-selector-dropdown', data-testid='prediction-display').",
+    "Add 'Outfit', 'IBM Plex Sans', and 'JetBrains Mono' to Google Fonts import in index.css.",
+    "Inject the defined color palette into tailwind.config.js dark theme section."
+  ]
+}

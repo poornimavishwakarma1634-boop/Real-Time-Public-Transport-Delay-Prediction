@@ -1,0 +1,62 @@
+======================================================================
+  REAL-TIME PUBLIC TRANSPORT DELAY PREDICTION
+  Model Evaluation & Comparison Report
+======================================================================
+
+1. MODEL PERFORMANCE SUMMARY
+----------------------------------------------------------------------
+
+1. Prophet
+   RMSE: 5.6087 minutes
+   MAE:  4.0355 minutes
+
+2. TensorFlow LSTM
+   RMSE: 5.7139 minutes
+   MAE:  4.2869 minutes
+
+3. PyTorch LSTM
+   RMSE: 5.7422 minutes
+   MAE:  4.3064 minutes
+
+4. SARIMA
+   RMSE: 5.9100 minutes
+   MAE:  4.5769 minutes
+
+5. ARIMA
+   RMSE: 5.9121 minutes
+   MAE:  4.5788 minutes
+
+======================================================================
+2. KEY FINDINGS
+----------------------------------------------------------------------
+
+🏆 Best Performing Model: Prophet
+   - Lowest RMSE: 5.6087 minutes
+   - Improvement: 5.13% over worst model
+
+📊 Model Category Comparison:
+   - Statistical Models Avg RMSE: 5.8103
+   - Deep Learning Models Avg RMSE: 5.7280
+   - Deep Learning outperforms by 1.42%
+
+======================================================================
+3. CONCLUSIONS
+----------------------------------------------------------------------
+
+✓ All models successfully predict transport delays
+✓ Deep learning captures long-term dependencies better
+✓ Statistical models provide good baseline performance
+✓ Prophet handles seasonality effectively
+✓ LSTM models learn complex temporal patterns
+
+======================================================================
+4. RECOMMENDATIONS
+----------------------------------------------------------------------
+
+• Production Deployment: Use best performing model
+• Ensemble Approach: Combine multiple models for robustness
+• Real-time Updates: Retrain models with latest data
+• Feature Expansion: Add more external factors (events, accidents)
+• Hyperparameter Tuning: Further optimize model parameters
+
+======================================================================
